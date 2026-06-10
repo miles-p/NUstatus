@@ -22,7 +22,10 @@ ROBOTS = [
 # gotta have dark mode
 ui.dark_mode().toggle()
 
-ui.label('NUstatus').classes('text-4xl font-bold')
+with ui.row().style('width: 100%; align-items: center;'):
+    ui.label('NUstatus').classes('text-4xl font-bold').style('margin-left: 20px; font-family: Helvetica Neue; font-weight: bold; flex: 1;')
+    ui.image('NUbots_Banner.svg').style('width: 200px; flex-shrink: 0;')
+    ui.element('div').style('flex: 1;')
 
 with ui.row().classes('items-center gap-4'):
     ui.label('Select Network Interface:').classes('text-lg')
@@ -43,8 +46,11 @@ async def is_online(ip: str) -> bool:
 def open_ssh(ip: str) -> None:
     subprocess.Popen(['gnome-terminal', '--', 'sshpass', '-p', ' ', 'ssh', f'{SSH_USER}@{ip}'])
 
-def install(robot: str) -> None:
-    subprocess.Popen(['gnome-terminal', '--', './b', 'install', robot], cwd=NUBOTS_DIR)
+def install(robot: str, with_config: bool) -> None:
+    if with_config:
+        subprocess.Popen(['gnome-terminal', '--', './b', 'install', '-co', robot], cwd=NUBOTS_DIR)
+    else:
+        subprocess.Popen(['gnome-terminal', '--', './b', 'install', robot], cwd=NUBOTS_DIR)
 
 nusight_proc: subprocess.Popen | None = None
 
@@ -62,7 +68,8 @@ for robot in ROBOTS:
         ui.label(robot['ip']).classes('font-mono text-gray-400 w-32')
         ui.button('SSH', on_click=lambda ip=robot['ip']: open_ssh(ip)).props('color=primary')
         ui.button('NUsight', on_click=lambda ip=robot['ip']: start_nusight(ip)).props('color=positive')
-        ui.button('Install', on_click=lambda robot=robot['name']: install(robot)).props('color=warning')
+        ui.button('Install', on_click=lambda robot=robot['name']: install(robot, with_config=False)).props('color=secondary')
+        ui.button('Install (with config)', on_click=lambda robot=robot['name']: install(robot, with_config=True)).props('color=secondary').style('font-weight: bold;')
 
         async def refresh_led(l=led, ip=robot['ip']) -> None:
             online = await is_online(ip)
