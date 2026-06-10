@@ -1,0 +1,5 @@
+asyncio
+subprocess
+psutil
+nicegui
+webbrowser
