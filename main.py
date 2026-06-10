@@ -14,8 +14,8 @@ DEFAULT_INTERFACE = 'wlp166s0' # made for the framework 13, suck shit if that's 
 
 ROBOTS = [
     {'name': 'n1', 'friendly_name': 'Kevin', 'ip': '10.1.1.1'},
-    {'name': 'n2', 'friendly_name': 'Sarah', 'ip': '10.1.1.2'},
-    {'name': 'n3', 'friendly_name': 'Billie', 'ip': '10.1.1.3'},
+    {'name': 'n2', 'friendly_name': 'Billie', 'ip': '10.1.1.2'},
+    {'name': 'n3', 'friendly_name': 'Sarah', 'ip': '10.1.1.3'},
     {'name': 'n4', 'friendly_name': 'Frankie', 'ip': '10.1.1.4'},
 ]
 
