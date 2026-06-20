@@ -21,6 +21,7 @@ ROBOTS = [
 
 # gotta have dark mode
 ui.dark_mode().toggle()
+ui.page_title("NUstatus")
 
 with ui.row().style('width: 100%; align-items: center;'):
     ui.label('NUstatus').classes('text-4xl font-bold').style('margin-left: 20px; font-family: Helvetica Neue; font-weight: bold; flex: 1;')
@@ -80,4 +81,4 @@ for robot in ROBOTS:
 
         ui.timer(REFRESH_TIME, refresh_led)
 
-ui.run()
+ui.run(favicon='Ball_Black.png')
