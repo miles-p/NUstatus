@@ -21,10 +21,10 @@ ROBOTS = [
 
 # gotta have dark mode
 ui.dark_mode().toggle()
-ui.page_title("NUstatus")
+ui.page_title("NUStatus")
 
 with ui.row().style('width: 100%; align-items: center;'):
-    ui.label('NUstatus').classes('text-4xl font-bold').style('margin-left: 20px; font-family: Helvetica Neue; font-weight: bold; flex: 1;')
+    ui.label('NUStatus').classes('text-4xl font-bold').style('margin-left: 20px; font-family: Helvetica Neue; font-weight: bold; flex: 1;')
     ui.image('NUbots_Banner.svg').style('width: 200px; flex-shrink: 0;')
     ui.element('div').style('flex: 1;')
 
