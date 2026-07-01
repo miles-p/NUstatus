@@ -13,10 +13,10 @@ REFRESH_TIME = 1.0
 DEFAULT_INTERFACE = 'wlp166s0' # made for the framework 13, suck shit if that's not yours :P
 
 ROBOTS = [
-    {'name': 'n1', 'friendly_name': 'Kevin', 'ip': '10.1.1.1'},
-    {'name': 'n2', 'friendly_name': 'Billie', 'ip': '10.1.1.2'},
-    {'name': 'n3', 'friendly_name': 'Sarah', 'ip': '10.1.1.3'},
-    {'name': 'n4', 'friendly_name': 'Frankie', 'ip': '10.1.1.4'},
+    {'name': 'n1', 'friendly_name': 'Kevin', 'ip': '10.0.1.1'},
+    {'name': 'n2', 'friendly_name': 'Billie', 'ip': '10.0.1.2'},
+    {'name': 'n3', 'friendly_name': 'Sarah', 'ip': '10.0.1.3'},
+    {'name': 'n4', 'friendly_name': 'Frankie', 'ip': '10.0.1.4'},
 ]
 
 # gotta have dark mode
